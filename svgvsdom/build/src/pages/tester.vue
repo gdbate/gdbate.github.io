@@ -7,7 +7,7 @@
         <div class="pa-1">
           <v-radio-group v-model="render" hide-details class="mt-0">
             <v-radio label="SVG" value="svg"></v-radio>
-            <v-radio label="DOM" value="dom"></v-radio>
+            <v-radio label="HTML" value="dom"></v-radio>
           </v-radio-group>
         </div>
       </div></div>
@@ -21,15 +21,15 @@
       <div class="section"><div>
         <div class="title pa-1">Project Density</div>
         <div class="pa-1">
-          <v-range-slider v-model="projectGap" :min="1" :max="500" label="Gap Between" hide-details></v-range-slider>
-          <v-range-slider v-model="projectDuration" :min="1" :max="500" label="Duration" hide-details></v-range-slider>
+          <v-range-slider v-model="projectGap" :min="1" :max="300" label="Gap Between" hide-details></v-range-slider>
+          <v-range-slider v-model="projectDuration" :min="1" :max="300" label="Duration" hide-details></v-range-slider>
         </div>
       </div></div>
       <div class="section"><div>
         <div class="title pa-1">Lane Sizing</div>
         <div class="pa-1">
-          <v-slider v-model="laneHeight" :min="10" :max="250" label="Lane Height" hide-details></v-slider>
-          <v-slider v-model="laneMargin" :min="1" :max="100" label="Lane Margin" hide-details></v-slider>
+          <v-slider v-model="laneHeight" :min="10" :max="150" label="Lane Height" hide-details></v-slider>
+          <v-slider v-model="laneMargin" :min="0" :max="50" label="Lane Margin" hide-details></v-slider>
         </div>
       </div></div>
       <div class="section"><div>
@@ -41,8 +41,6 @@
       </div></div>
     </div>
     <div id="projects">
-      <div style="padding: 10px;"><b>Total Projects:</b> {{ projects.length }}</div>
-
       <container-resize :min="widthSizing[0]" :max="widthSizing[1]" :height="totalHeight" :interval="interval">
 
 <!-- SVG Method -->
@@ -57,7 +55,7 @@
           <defs>
             <svg:style>
               rect.lane {
-                fill: #EEEEEE;
+                fill: #E1F5FE;
               }
               rect.label {
                 stroke-width: 1;
@@ -134,7 +132,7 @@
         </div>
 
       </container-resize>
-
+      <div style="padding: 10px;"><b>Total Projects:</b> {{ projects.length }}</div>
       <div class="code" v-if="false">
         <b>generated projects:</b> {{ projects }}
       </div>
@@ -253,14 +251,14 @@ export default component;
 #option-bar>#options {
   background-color: #eee;
   border-right: 1px solid #aaa;
-  width: 300px;
+  width: 320px;
   padding: 5px;
 }
 
 #option-bar .section {
   background-color: #fafafa;
   border: 1px outset;
-  width: 280px;
+  width: 300px;
   margin: 5px;
 }
 #option-bar .section>div {
@@ -277,7 +275,7 @@ div#lanes {
 }
 
 div.lane {
-  background-color: #EEEEEE;
+  background-color: #E1F5FE;
   width: 100%;
   position: absolute;
   left: 0;

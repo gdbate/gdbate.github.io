@@ -1,11 +1,11 @@
 <template><div>
-  <div style="padding: 10px;"><b>Container Width:</b> {{ width }}</div>
-  <div style="padding: 10px;"><b>Interval:</b> {{ interval }}</div>
-  <div style="padding: 10px;">
+  <div>
     <div class="container-resize" :style="styleContainerResize">
       <slot/>
     </div>
   </div>
+  <div style="padding: 10px;"><b>Container Width:</b> {{ width }}</div>
+  <div style="padding: 10px;"><b>Interval:</b> {{ interval }}</div>
 </div></template>
 
 <script>
@@ -66,7 +66,7 @@ export default component;
   position: relative;
   transition-timing-function: ease;
   position: relative;
-  outline: 1px dotted green;
+  outline: 1px dotted #aaa;
   overflow: hidden;
 }
 
